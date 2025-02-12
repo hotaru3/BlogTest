@@ -1,6 +1,6 @@
 <template lang="pug">
     .wrapper
-      TheHeader
+      Header
       main.main
         .topMenuContainer
           TopMenu
@@ -14,7 +14,7 @@
         .spArea
           CategoryArea(:api="$config.apiKey")
           LinkArea
-      TheFooter.theFooter
+      Footer.theFooter
     </template>
     
     <style>
