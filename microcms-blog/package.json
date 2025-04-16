@@ -12,6 +12,7 @@
   "dependencies": {
     "normalize.css": "^8.0.1",
     "nuxt": "^3.15.3",
+    "nuxt-microcms-module": "^3.0.2",
     "pug": "^3.0.3",
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.1.0",
