@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@types/node": "^22.14.1",
     "normalize.css": "^8.0.1",
     "nuxt": "^3.15.3",
     "nuxt-microcms-module": "^3.0.2",
