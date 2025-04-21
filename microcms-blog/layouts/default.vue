@@ -2,18 +2,8 @@
     .wrapper
       Header
       main.main
-        .topMenuContainer
-          TopMenu
         .mainContainer
           slot
-          .subAreaContainer
-            CategoryArea(:api="$config.apiKey")
-            LinkArea
-          .topScroll
-            TopScroll
-        .spArea
-          CategoryArea(:api="$config.apiKey")
-          LinkArea
       Footer.theFooter
     </template>
     
@@ -103,7 +93,6 @@
       transition: 0.3s
     }
     .main {
-      background-image: url("~@/assets/images/home/background.png");
       background-repeat: repeat;
       line-height: 1.7;
     }
@@ -112,10 +101,10 @@
       color: #202122;
       padding: 20px 50px;
       padding-right: 100px;
-      display: flex;
+      /*display: flex;
       justify-content: space-between;
-      padding-bottom: 100px; /*フッターの高さと同じにする*/
-      line-height: 2;
+      padding-bottom: 100px; /*フッターの高さと同じにする
+      line-height: 2;*/
     }
     
     .subAreaContainer{
