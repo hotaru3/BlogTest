@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
-  modules: ["nuxt-microcms-module"],
+  modules: ["nuxt-microcms-module", "@nuxtjs/tailwindcss"],
   microCMS: {
     serviceDomain: "blogkadai",
     apiKey: "HgmmZhMj70FwElDSU8HrqrVzFDupMpiAQWUh",
