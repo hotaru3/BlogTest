@@ -18,14 +18,14 @@
       >
         {{ data.category?.name }}
       </div>
-      <div class="text-sm text-gray-700">
-      </div>
+    </div>
+    <div class="text-sm text-gray-700">
     </div>
     <div v-html="data.content" class="prose mt-6 md:mt-10"></div>
   </template>
 </template>
 <script setup lang="ts">
-import { Blog } from "~~/types/blog";
+//import { Blog } from "~~/types/blog";
 
 const { params } = useRoute();
 
