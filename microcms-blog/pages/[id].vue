@@ -21,7 +21,7 @@
     </div>
     <div class="text-sm text-gray-700">
     </div>
-    <div v-html="data.content" class="prose mt-6 md:mt-10"></div>
+    <div v-html="convert(data.content)" class="prose mt-6 md:mt-10"></div>
   </template>
 </template>
 <script setup lang="ts">
@@ -34,4 +34,12 @@ const { data } = await useMicroCMSGetListDetail<Blog>({
   contentId: Array.isArray(params.id) ? params.id[0] : params.id,
 });
 console.log(data)
+
+function convert(body) {
+  body = body.replace(/.png/g, ".png?fm=webp")
+  body = body.replace(/.jpg/g, ".jpg?fm=webp")
+  return body;
+}
+
 </script>
+
