@@ -93,10 +93,11 @@
       transition: 0.3s
     }
     .main {
-      background-repeat: repeat;
-      line-height: 1.7;
-    }
-    
+      
+  background-image: url("../assets/images/home/background.png");
+  background-repeat: repeat;
+  line-height: 1.7;
+}
     .mainContainer{
       color: #202122;
       padding: 20px 50px;
@@ -114,7 +115,6 @@
     
     .theFooter {
       text-align: center;
-      background-color: #eeeeee;
       width: 100%;
       height: 150px;
       position: absolute;

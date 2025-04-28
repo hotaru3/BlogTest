@@ -1,13 +1,13 @@
-<template>
-    <header class="header">
-      <h1>ヘッダータイトル</h1>
-    </header>
+<template lang="pug">
+    router-link.header(to="/")  Jamstackブログ制作
 </template>
   
   <style>
   .header {
     background-color: peachpuff;
-    color: #fff;
+    color: #000;
     display: flex;
-  }
+    padding: 5%;
+    font-size: 50px;
+}
   </style>

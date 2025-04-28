@@ -1,6 +1,6 @@
 <template>
   <h1 class="text-center font-sans text-4xl font-semibold">
-    Nuxt3 Jamstack Blogs
+    ブログ一覧
   </h1>
   <ul class="mt-16 grid grid-cols-1 gap-8">
     <li v-for="blog in data?.contents" :key="blog.id">
@@ -45,3 +45,10 @@ const { data } = await useMicroCMSGetList<Blog>({
 });
 console.log(data)
 </script>
+
+<style>
+li {
+    background-color: #eeebbb;
+}
+
+</style>
