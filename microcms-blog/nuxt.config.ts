@@ -2,6 +2,16 @@
 //const { MICROCMS_SERVICE_DOMAIN, MICROCMS_API_KEY } = process.env;
 import tailwindTypography from "@tailwindcss/typography";
 export default defineNuxtConfig({
+  devtools: { enabled: true },
+  build: {
+    transpile: ["vuetify"],
+  },
+  vite: {
+    ssr: {
+      noExternal: ["vuetify"],
+    },
+  },
+  css: ["vuetify/styles", "@mdi/font/css/materialdesignicons.css"],
   modules: ["nuxt-microcms-module", "@nuxtjs/tailwindcss"],
 
   microCMS: {

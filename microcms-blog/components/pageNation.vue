@@ -1,0 +1,84 @@
+<template lang="pug">
+    .pageNation
+        label.prev.hover(v-if="page!='1'" @click="$router.push('/' + name + '/' + prevPage(page))") ←
+        label.hover(v-if="page!='1'" @click="$router.push('/' + name + '/1')") 1
+        label(v-if="page!='1' && page!='2'  && page!='3'  && page!='4' ") …
+        label.hover(v-if="page!='1' && page!='2'  && page!='3' " @click="$router.push('/' + name + '/' + prevPage(page-1))") {{page-2}}
+        label.hover(v-if="page!='1' && page!='2' " @click="$router.push('/' + name + '/' + prevPage(page))") {{page-1}}
+        label.current {{page}}
+        label.hover(v-if="Number(page)+1!=finalPage(count) && page!=finalPage(count)" @click="$router.push('/' + name + '/' + nextPage(page))") {{Number(page)+1}}
+        label(v-if="Number(page)+1!=finalPage(count) && Number(page)+2!=finalPage(count) && page!=finalPage(count) && Number(page)+2!=finalPage(count)") …
+        label.hover(v-if="page!=finalPage(count)" @click="$router.push('/' + name + '/' + finalPage(count))") {{finalPage(count)}}
+        label.next.hover(v-if="page!=finalPage(count)" @click="$router.push('/' + name + '/' + nextPage(page))") →
+    </template>
+    
+    <script>
+    export default {
+      name: "PageNation",
+      props: {
+        count: {
+          type: Number,
+          required: true,
+            },
+        page: {
+          type: String,
+          required: true,
+            },
+        name: {
+          type: String,
+          required: true,
+            }
+        },
+        data(){
+        return {
+            }
+        },
+        methods: {
+            prevPage(page){
+                const data = Number(page) -1 
+                return data
+            },
+            nextPage(page){
+                const data = Number(page) +1 
+                return data
+            },
+            //最終ページを抽出
+            finalPage(count){
+                var data = count
+                data = data - 1
+                data = data / 10
+                data = Math.trunc(data) + 1
+                String(data)
+                //console.log(data)
+                return data
+            },
+       }
+    };
+    </script>
+    
+<style lang="sass" scoped>
+.pageNation
+    display: flex
+    color: #000
+    background-color: #f3f28ba1
+    font-size:20px
+    width: 360px
+    margin: 0 auto
+    justify-content: space-evenly
+    padding: 10px
+    border-radius: 10px
+.current
+    background-color: #77A88D
+    color: #fff
+    padding: 0 15px
+    border-radius: 10px
+.hover
+  padding: 0 15px
+  transition: .3s
+.hover:hover
+  color: #fff
+  padding: 0 15px
+  border-radius: 10px
+  background-color: #77A88D
+  box-shadow: 6px 6px 3px #666666
+</style>
