@@ -4,7 +4,6 @@
       main.main
         .mainContainer
           slot
-      PageNation(:count="100" :page="page" :name="'page'")
       Footer.theFooter
     </template>
     

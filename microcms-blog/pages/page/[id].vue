@@ -30,10 +30,9 @@
       </NuxtLink>
     </li>
   </ul>
-  
- <PageNation 
+  <PageNation 
    :count="100"
-   page="1"
+   :page="route.params.id"
    name="page">
   </PageNation>
 </template>
@@ -50,6 +49,7 @@ const { data } = await useMicroCMSGetList<Blog>({
   endpoint: "blogs",
 });
 console.log(data)
+const route = useRoute()
 </script>
 
 <style>
