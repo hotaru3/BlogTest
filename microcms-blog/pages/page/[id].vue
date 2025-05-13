@@ -45,14 +45,13 @@ export type Blog = {
   eyecatch?: MicroCMSImage;
   category: (MicroCMSListContent & Category) | null;
 };
-
 const { data } = await useMicroCMSGetList<Blog>({
    endpoint: "blogs",
    queries: {limit: 3, offset: 3}
   },
 );
 console.log(data)
-const route = useRoute()
+
 </script>
 
 <style>
