@@ -15,27 +15,6 @@ export default {
       page:  1
     }
   },
-  async asyncData({ params,$config }) {
-    const page = params.p || '1'
-    const categoryId = params.categoryId
-    const limit = 5
-    const { data } = await useFetch(
-      // your-service-id部分は自分のサービスidに置き換えてください
-      `https://blogkadai.microcms.io/api/v1/blog?limit=${limit}${
-        categoryId === undefined ? '' : `&filters=category[equals]${categoryId}`
-      }&offset=${(page - 1) * limit}`,
-      { headers: { 'X-API-KEY': process.env.MICROCMS_API_KEY }}
-    )
-   // console.log(page)
-    data.page = page
-    data.categoryId = categoryId
-    //test用
-    //data.totalCount = 100
-    console.log(`test`)
-    console.log(data)
-    //console.log(data.totalCount)
-    return data
-  },
   name: "Index",
   computed: {},
   mounted() {
