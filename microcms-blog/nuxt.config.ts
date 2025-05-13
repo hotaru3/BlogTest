@@ -20,7 +20,11 @@ export default defineNuxtConfig({
     serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
     apiKey: process.env.MICROCMS_API_KEY,
   },
-
+  routeRules: {
+    "/": { ssr: true, prerender: true },
+    "/page/[id]": { ssr: true, prerender: true },
+    "/[id]": { ssr: true, prerender: true },
+  },
   tailwindcss: {
     config: {
     content: [],
