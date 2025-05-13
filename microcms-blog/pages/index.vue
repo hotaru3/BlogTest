@@ -47,9 +47,10 @@ export type Blog = {
   category: (MicroCMSListContent & Category) | null;
 };
 const { data } = await useMicroCMSGetList<Blog>({
-  endpoint: "blogs",
-});
-console.log(data)
+   endpoint: "blogs",
+   queries: {limit: 3, offset: 0}
+  },
+);
 
 </script>
 

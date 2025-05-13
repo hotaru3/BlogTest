@@ -1,7 +1,7 @@
 <template lang="pug">
     .pageNation
         label.prev.hover(v-if="page!='1'" @click="$router.push('/' + name + '/' + prevPage(page))") ←
-        label.hover(v-if="page!='1'" @click="$router.push('/' + name + '/1')") 1
+        label.hover(v-if="page!='1'" @click="$router.push('/')") 1
         label(v-if="page!='1' && page!='2'  && page!='3'  && page!='4' ") …
         label.hover(v-if="page!='1' && page!='2'  && page!='3' " @click="$router.push('/' + name + '/' + prevPage(page-1))") {{page-2}}
         label.hover(v-if="page!='1' && page!='2' " @click="$router.push('/' + name + '/' + prevPage(page))") {{page-1}}
