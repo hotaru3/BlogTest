@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     "/": { ssr: true, prerender: true },
-    "/page/[id]": { ssr: true, prerender: true },
+    "/page/[id]": { ssr: false, prerender: true },
     "/[id]": { ssr: true, prerender: true },
   },
   tailwindcss: {
