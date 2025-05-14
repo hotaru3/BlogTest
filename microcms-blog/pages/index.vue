@@ -47,6 +47,7 @@ export type Blog = {
   category: (MicroCMSListContent & Category) | null;
 };
 const { data } = await useMicroCMSGetList<Blog>({
+   apiKey: process.env.MICROCMS_API_KEY,
    endpoint: "blogs",
    queries: {limit: 5, offset: 0}
   },

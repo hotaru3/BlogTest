@@ -39,6 +39,8 @@
 
 <script setup lang="ts">
 import type { MicroCMSImage, MicroCMSListContent } from "microcms-js-sdk";
+
+
 export type Blog = {
   title?: string;
   content?: string;
@@ -51,7 +53,8 @@ const page  = Number(route.params.id);
 const id = page * 5 - 5;
 const { data } = await useMicroCMSGetList<Blog>({
    endpoint: "blogs",
-   queries: {limit: 5, offset: id}
+   queries: {limit: 5, offset: id},
+   headers: { 'X-MICROCMS-API-KEY': process.env.MICROCMS_API_KEY },
   },
 );
 const totalCount = 11;
