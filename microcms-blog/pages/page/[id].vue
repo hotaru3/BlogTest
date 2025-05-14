@@ -40,6 +40,9 @@
 <script setup lang="ts">
 import type { MicroCMSImage, MicroCMSListContent } from "microcms-js-sdk";
 
+const route = useRoute();
+const page  = Number(route.params.id);
+const id = page * 5 - 5;
 
 export type Blog = {
   title?: string;
@@ -47,14 +50,9 @@ export type Blog = {
   eyecatch?: MicroCMSImage;
   category: (MicroCMSListContent & Category) | null;
 };
-
-const route = useRoute();
-const page  = Number(route.params.id);
-const id = page * 5 - 5;
 const { data } = await useMicroCMSGetList<Blog>({
    endpoint: "blogs",
    queries: {limit: 5, offset: id},
-   headers: { 'X-MICROCMS-API-KEY': process.env.MICROCMS_API_KEY },
   },
 );
 const totalCount = 11;
