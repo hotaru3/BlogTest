@@ -54,6 +54,7 @@ const { data } = await useMicroCMSGetList<Blog>({
    queries: {limit: 5, offset: id}
   },
 );
+const totalCount = 11;
 
 </script>
 
