@@ -1,15 +1,22 @@
 <template lang="pug">
     .pageNation
-        label.prev.hover(v-if="page!='1'" @click="$router.push('/' + name + '/' + prevPage(page))") ←
-        label.hover(v-if="page!='1'" @click="$router.push('/')") 1
+        nuxt-link(v-if="page!='1'" :to= "'/' + name + '/' + prevPage(page)")
+          label.prev.hover ←
+        nuxt-link(v-if="page!='1'" :to="'/'") 
+          label.hover 1
         label(v-if="page!='1' && page!='2'  && page!='3'  && page!='4' ") …
-        label.hover(v-if="page!='1' && page!='2'  && page!='3' " @click="$router.push('/' + name + '/' + prevPage(page-1))") {{page-2}}
-        label.hover(v-if="page!='1' && page!='2' " @click="$router.push('/' + name + '/' + prevPage(page))") {{page-1}}
+        nuxt-link(v-if="page!='1' && page!='2'  && page!='3' " :to="'/' + name + '/' + prevPage(page-1)")
+          label.hover {{page-2}}
+        nuxt-link(v-if="page!='1' && page!='2' " :to="'/' + name + '/' + prevPage(page)")
+          label.hover {{page-1}}
         label.current {{page}}
-        label.hover(v-if="Number(page)+1!=finalPage(count) && page!=finalPage(count)" @click="$router.push('/' + name + '/' + nextPage(page))") {{Number(page)+1}}
+        nuxt-link(v-if="Number(page)+1!=finalPage(count) && page!=finalPage(count)" :to="'/' + name + '/' + nextPage(page)")
+          label.hover {{Number(page)+1}}
         label(v-if="Number(page)+1!=finalPage(count) && Number(page)+2!=finalPage(count) && page!=finalPage(count) && Number(page)+2!=finalPage(count)") …
-        label.hover(v-if="page!=finalPage(count)" @click="$router.push('/' + name + '/' + finalPage(count))") {{finalPage(count)}}
-        label.next.hover(v-if="page!=finalPage(count)" @click="$router.push('/' + name + '/' + nextPage(page))") →
+        nuxt-link(v-if="page!=finalPage(count)" :to="'/' + name + '/' + finalPage(count)")
+          label.hover {{finalPage(count)}}
+        nuxt-link(v-if="page!=finalPage(count)" :to="'/' + name + '/' + nextPage(page)")
+          label.next.hover →
     </template>
     
     <script>

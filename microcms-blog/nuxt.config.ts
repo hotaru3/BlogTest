@@ -28,8 +28,8 @@ export default defineNuxtConfig({
   },
 },
 
-generate: {
-  routes: ['/'],
-},
+  generate: {
+    routes: ['/'],
+  },
   compatibilityDate: "2025-04-23",
 });
