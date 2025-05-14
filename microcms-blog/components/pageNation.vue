@@ -46,7 +46,7 @@
             finalPage(count){
                 var data = count
                 data = data - 1
-                data = data / 10
+                data = data / 5
                 data = Math.trunc(data) + 1
                 String(data)
                 //console.log(data)

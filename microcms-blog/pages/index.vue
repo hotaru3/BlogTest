@@ -32,7 +32,7 @@
   </ul>
   
  <PageNation 
-   :count="100"
+   :count= totalCount
    page="1"
    name="page">
   </PageNation>
@@ -48,9 +48,10 @@ export type Blog = {
 };
 const { data } = await useMicroCMSGetList<Blog>({
    endpoint: "blogs",
-   queries: {limit: 3, offset: 0}
+   queries: {limit: 5, offset: 0}
   },
 );
+const totalCount = 11;
 
 </script>
 

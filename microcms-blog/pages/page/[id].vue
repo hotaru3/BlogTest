@@ -31,7 +31,7 @@
     </li>
   </ul>
   <PageNation 
-   :count="100"
+   :count=totalCount
    :page="route.params.id"
    name="page">
   </PageNation>
@@ -45,12 +45,15 @@ export type Blog = {
   eyecatch?: MicroCMSImage;
   category: (MicroCMSListContent & Category) | null;
 };
+
+const route = useRoute();
+const page  = Number(route.params.id);
+const id = page * 5 - 5;
 const { data } = await useMicroCMSGetList<Blog>({
    endpoint: "blogs",
-   queries: {limit: 3, offset: 3}
+   queries: {limit: 5, offset: id}
   },
 );
-console.log(data)
 
 </script>
 
