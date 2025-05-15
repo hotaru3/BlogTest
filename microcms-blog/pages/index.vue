@@ -32,27 +32,29 @@
   </ul>
   
  <PageNation 
-   :count= totalCount
+   :count="data?.totalCount"
    page="1"
    name="page">
   </PageNation>
 </template>
 
 <script setup lang="ts">
-import type { MicroCMSImage, MicroCMSListContent } from "microcms-js-sdk";
+import type { MicroCMSImage, MicroCMSListContent, } from "microcms-js-sdk";
 export type Blog = {
   title?: string;
   content?: string;
   eyecatch?: MicroCMSImage;
   category: (MicroCMSListContent & Category) | null;
+  totalCount?: string;
 };
+
 const { data } = await useMicroCMSGetList<Blog>({
-   apiKey: process.env.MICROCMS_API_KEY,
    endpoint: "blogs",
-   queries: {limit: 5, offset: 0}
+   queries: {limit: 5, offset: 0},
   },
 );
-const totalCount = 11;
+
+// const { totalCount } = data.totalCount;
 
 </script>
 

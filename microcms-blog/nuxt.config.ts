@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     //apiKey: MICROCMS_API_KEY,
     serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
     apiKey: process.env.MICROCMS_API_KEY,
+    
   },
 
   tailwindcss: {
@@ -32,4 +33,7 @@ export default defineNuxtConfig({
     routes: ['/'],
   },
   compatibilityDate: "2025-04-23",
+
+
+
 });
