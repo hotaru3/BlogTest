@@ -1,6 +1,6 @@
 <template>
   <h1 class="text-center font-sans text-4xl font-semibold">
-    ブログ一覧
+    一覧
   </h1>
   <ul class="mt-16 grid grid-cols-1 gap-8">
     <li v-for="blog in data?.contents" :key="blog.id">
@@ -36,6 +36,8 @@
    page="1"
    name="page">
   </PageNation>
+
+  <Category></Category>
 </template>
 
 <script setup lang="ts">
@@ -53,6 +55,7 @@ const { data } = await useMicroCMSGetList<Blog>({
    queries: {limit: 5, offset: 0},
   },
 );
+
 
 // const { totalCount } = data.totalCount;
 
