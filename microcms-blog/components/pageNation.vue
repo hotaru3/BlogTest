@@ -69,7 +69,7 @@
     color: #000
     background-color: #f3f28ba1
     font-size:20px
-    width: 360px
+    width: auto
     margin: 50px auto
     justify-content: space-evenly
     padding: 10px

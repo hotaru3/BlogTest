@@ -36,8 +36,6 @@
    page="1"
    name="page">
   </PageNation>
-
-  <Category></Category>
 </template>
 
 <script setup lang="ts">

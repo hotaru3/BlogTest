@@ -4,6 +4,7 @@
       main.main
         .mainContainer
           slot
+          Category
       Footer.theFooter
     </template>
     
