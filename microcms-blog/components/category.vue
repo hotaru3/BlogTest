@@ -4,7 +4,7 @@
     <div class="linkContainer">
         <ul class="linkUl">
             <li class="linkText" v-for="data in data?.contents" :key="data.id">
-                <NuxtLink :to="`/${data.id}`">
+                <NuxtLink :to="`/category/${data.id}/page/1`">
                     {{ data?.name }}
                 </NuxtLink>
             </li>

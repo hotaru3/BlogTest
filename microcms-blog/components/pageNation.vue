@@ -2,7 +2,7 @@
     .pageNation
         nuxt-link(v-if="page!='1'" :to= "'/' + name + '/' + prevPage(page)")
           label.prev.hover ←
-        nuxt-link(v-if="page!='1'" :to="'/'") 
+        nuxt-link(v-if="page!='1'" :to= "'/' + name + '/' + 1 ") 
           label.hover 1
         label(v-if="page!='1' && page!='2'  && page!='3'  && page!='4' ") …
         nuxt-link(v-if="page!='1' && page!='2'  && page!='3' " :to="'/' + name + '/' + prevPage(page-1)")
