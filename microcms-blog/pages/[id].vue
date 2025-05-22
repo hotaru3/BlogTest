@@ -23,6 +23,8 @@
     </div>
     <div v-html="convert(data.content)" class="prose mt-6 md:mt-10"></div>
   </template>
+  <input class="backBtn" type="button" @click="backPage()" value="前のページに戻る">
+  </input>
 </template>
 <script setup lang="ts">
 //import { Blog } from "~~/types/blog";
@@ -40,6 +42,30 @@ function convert(body) {
   body = body.replace(/.jpg/g, ".jpg?fm=webp")
   return body;
 }
+function backPage() {
+      window.history.back()
+}
 
 </script>
 
+
+
+<style>
+.backBtn {
+  margin: 30px auto;
+  padding: 10px;
+  border-radius: 10px ;
+  color: #000;
+  background-color:  #f3f28ba1;
+  border-color: #77A88D;
+  transition: .3s;
+  display: block;
+}
+
+.backBtn:hover {
+  background-color: #77A88D;
+  border-color: #77A88D;
+  color: #fff;
+  box-shadow: 6px 6px 3px #666666;
+}
+</style>
