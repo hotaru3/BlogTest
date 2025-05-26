@@ -40,6 +40,9 @@ console.log(data)
 function convert(body) {
   body = body.replace(/.png/g, ".png?fm=webp")
   body = body.replace(/.jpg/g, ".jpg?fm=webp")
+      body = body.replace(/urlns/g, '<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"><iframe class="embedly-embed" style=border:0;top:0;left:0;width:100%;height:100%;position:absolute;" src="https://novelsphere.jp/ns')
+      body = body.replace(/endns/g, '" width="100%" height="100%" frameborder="0" scrolling="no"></iframe></div>')
+      
   return body;
 }
 function backPage() {
